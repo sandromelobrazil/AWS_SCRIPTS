@@ -1,0 +1,21 @@
+# user or role policy for connect privileges
+
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeInstances",
+				"ec2:DescribeSecurityGroups",
+				"ec2:AuthorizeSecurityGroupIngress",
+				"ec2:RevokeSecurityGroupIngress"
+			],
+			"Resource": "*"
+		}
+	]
+}
+
+# to put this policy into a bash variable, use:
+
+rolepolicy="{\"Version\": \"2012-10-17\",\"Statement\": [{\"Effect\": \"Allow\",\"Action\": [\"ec2:DescribeInstances\", \"ec2:DescribeSecurityGroups\", \"ec2:AuthorizeSecurityGroupIngress\", \"ec2:RevokeSecurityGroupIngress\"],\"Resource\": \"*\"}]}"

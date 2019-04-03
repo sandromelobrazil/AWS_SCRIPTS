@@ -1,0 +1,86 @@
+$ ./testclose.sh
+
+ making new sgs and rules 
+
+my1sgid=sg-7f0d552a
+my2sgid=sg-790d552c
+
+ describing new sgs 
+
+SECURITYGROUPS	my1 security group	sg-7f0d552a	my1sg	xxxxxxxxxxxx
+IPPERMISSIONS	22	tcp	22
+IPRANGES	0.0.0.0/0
+IPRANGES	10.0.10.0/24
+IPRANGES	192.168.1.1/32
+IPPERMISSIONS	80	tcp	80
+IPRANGES	0.0.0.0/0
+TAGS	sgname	my1sg
+SECURITYGROUPS	my2 security group	sg-790d552c	my2sg	xxxxxxxxxxxx
+IPPERMISSIONS	22	tcp	22
+IPRANGES	10.0.10.0/24
+USERIDGROUPPAIRS	sg-7f0d552a	my1sg	xxxxxxxxxxxx
+IPPERMISSIONS	80	tcp	80
+IPRANGES	0.0.0.0/0
+TAGS	sgname	my2sg
+
+ closing 22 cidrs in my2sg$ with . ./closeports.sh my2sg 22 
+
+sgid=sg-790d552c
+closing any port 22 inbound rules in sg sg-790d552c tagged my2sg
+found port 22 open cidr 10.0.10.0/24 closing...
+
+ describing my2sg 
+
+SECURITYGROUPS	my2 security group	sg-790d552c	my2sg	xxxxxxxxxxxx
+IPPERMISSIONS	22	tcp	22
+USERIDGROUPPAIRS	sg-7f0d552a	my1sg	xxxxxxxxxxxx
+IPPERMISSIONS	80	tcp	80
+IPRANGES	0.0.0.0/0
+TAGS	sgname	my2sg
+
+ note IPRANGES	10.0.10.0/24 is no longer listed
+
+ remaking my2sg 10.0.10.0/24:22 rule
+
+ describing my2sg 
+
+SECURITYGROUPS	my2 security group	sg-790d552c	my2sg	xxxxxxxxxxxx
+IPPERMISSIONS	22	tcp	22
+IPRANGES	10.0.10.0/24
+USERIDGROUPPAIRS	sg-7f0d552a	my1sg	xxxxxxxxxxxx
+IPPERMISSIONS	80	tcp	80
+IPRANGES	0.0.0.0/0
+TAGS	sgname	my2sg
+
+ closing 22 cidrs in all sgs with . ./closeportsallsgs.sh 22
+
+ calling . ./closeports.sh my2sg 22
+sgid=sg-790d552c
+closing any port 22 inbound rules in sg sg-790d552c tagged my2sg
+found port 22 open cidr 10.0.10.0/24 closing...
+
+ calling . ./closeports.sh my1sg 22
+sgid=sg-7f0d552a
+closing any port 22 inbound rules in sg sg-7f0d552a tagged my1sg
+found port 22 open cidr 0.0.0.0/0 closing...
+found port 22 open cidr 10.0.10.0/24 closing...
+found port 22 open cidr 192.168.1.1/32 closing...
+
+ finished . ./closeportsallsgs.sh 22
+
+ describing after all closed 
+
+SECURITYGROUPS	my1 security group	sg-7f0d552a	my1sg	xxxxxxxxxxxx
+IPPERMISSIONS	80	tcp	80
+IPRANGES	0.0.0.0/0
+TAGS	sgname	my1sg
+SECURITYGROUPS	my2 security group	sg-790d552c	my2sg	xxxxxxxxxxxx
+IPPERMISSIONS	22	tcp	22
+USERIDGROUPPAIRS	sg-7f0d552a	my1sg	xxxxxxxxxxxx
+IPPERMISSIONS	80	tcp	80
+IPRANGES	0.0.0.0/0
+TAGS	sgname	my2sg
+
+ note there are no port 22 cidr rules
+
+ deleted groups

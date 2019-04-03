@@ -1,0 +1,29 @@
+$ ./mfa_examplescriptuse.sh
+aws credentials reset to assumer user 'assumer'
+access to everything but 'aws sts assume-role' is disabled
+
+A client error (UnauthorizedOperation) occurred when calling the DescribeInstances operation: You are not authorized to perform this operation.
+Enter an MFA code for assumer: 817829
+admin assumed SUCCESS
+RUNNING PRIVILEGED COMMANDS
+{
+    "Reservations": []
+}
+FINISHED PRIVILEGED COMMANDS
+aws credentials reset to assumer user 'assumer'
+access to everything but 'aws sts assume-role' is disabled
+
+A client error (UnauthorizedOperation) occurred when calling the DescribeKeyPairs operation: You are not authorized to perform this operation.
+Enter an MFA code for assumer: 685434
+connect assumed SUCCESS
+RUNNING PRIVILEGED COMMANDS
+{
+    "Reservations": []
+}
+
+A client error (UnauthorizedOperation) occurred when calling the DescribeKeyPairs operation: You are not authorized to perform this operation.
+FINISHED PRIVILEGED COMMANDS
+aws credentials reset to assumer user 'assumer'
+access to everything but 'aws sts assume-role' is disabled
+
+A client error (UnauthorizedOperation) occurred when calling the DescribeInstances operation: You are not authorized to perform this operation.

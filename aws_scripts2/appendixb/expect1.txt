@@ -1,0 +1,3 @@
+$./expect1.sh
+code: 111
+you typed code: 111

@@ -1,0 +1,70 @@
+# hardened sshd config file
+# turns off Key access
+# turns on Password access
+
+# the following strings are replaced:
+# SEDsshportSED
+# SEDsshuserSED
+
+# change the default ssh port
+Port SEDsshportSED
+
+# use better security protocols
+Protocol 2
+
+# log to authriv
+SyslogFacility AUTHPRIV
+# log info messages
+LogLevel INFO
+
+# don't permit root login, or root forced commands
+PermitRootLogin no
+
+# TURNED OFF
+# where the access keys can be found
+#AuthorizedKeysFile	.ssh/authorized_keys
+
+# turn off various things
+HostbasedAuthentication no
+IgnoreRhosts yes
+X11Forwarding no
+
+# TURNED ON
+# password authentication
+PasswordAuthentication yes
+ChallengeResponseAuthentication yes
+
+# only SEDsshuserSED can sign in
+AllowUsers SEDsshuserSED
+# run user and session checks
+UsePAM yes
+
+# when last signed in
+PrintLastLog yes
+
+# more secure way to run the sshd
+UsePrivilegeSeparation sandbox
+
+# max seconds to sign in after connecting
+LoginGraceTime 60
+
+# max authentication attempts per connect
+# setting this any lower can cause problems
+MaxAuthTries 3
+
+# max multiplexed ssh sessions
+# to limit sessions add the following to /etc/security/limits.conf:
+#ssher - maxlogins 1
+MaxSessions 1
+
+# max concurrent unauthenticated sessions
+MaxStartups 1
+
+# check no world writeable files left in user home directory
+StrictModes yes
+
+# no empty passwords
+PermitEmptyPasswords no
+
+# allows scp
+Subsystem	sftp	/usr/libexec/openssh/sftp-server

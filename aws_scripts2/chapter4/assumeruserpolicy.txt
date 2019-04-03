@@ -1,0 +1,21 @@
+# assumer user policy
+# can only run 'aws sts assume-role --role-arn ***ROLEARN*** ...'
+
+{
+	"Version": "2012-10-17",
+	"Statement":
+	[
+		{
+			"Effect": "Allow",
+			"Action": "sts:AssumeRole",
+			"Resource": "***ROLEARN***"
+		}
+	]
+}
+
+# to put this policy into a bash variable, use:
+
+userpolicy="{\"Version\": \"2012-10-17\",\"Statement\": [{\"Effect\": \"Allow\",\"Action\": \"sts:AssumeRole\",\"Resource\": \""
+userpolicy+=$rolearn
+userpolicy+="\"}]}"
+echo userpolicy=$userpolicy

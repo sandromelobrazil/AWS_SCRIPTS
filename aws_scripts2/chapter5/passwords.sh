@@ -1,0 +1,6 @@
+#!/bin/bash
+ssherpassword=dfd3b1f3511d7bdb
+rootpassword=83d3a4a6b62b58f4
+mysql_rootpassword=b7cbe02bc9eb2384
+db_webpass=b2fc0d3da82bfdad
+aes=a8026b1366ae4938fc811cb8a89cbb97dc78f3363f3b57ddfe63d0ac653247d6

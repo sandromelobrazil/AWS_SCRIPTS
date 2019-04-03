@@ -1,0 +1,12 @@
+$ ./expect5.sh
+spawn ./expect6.sh
+connecting to server...
+MFA code for required:
+mfacode=123456
+done connecting
+
+second run
+spawn ./expect6.sh
+connecting to server...
+MFA code for required:123456
+^C

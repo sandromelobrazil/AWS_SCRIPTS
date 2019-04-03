@@ -1,0 +1,16 @@
+# user or role policy for admin privileges
+
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": "*",
+			"Resource": "*"
+		}
+	]
+}
+
+# to put this policy into a bash variable, use:
+
+rolepolicy="{\"Version\": \"2012-10-17\",\"Statement\": [{\"Effect\": \"Allow\",\"Action\": \"*\",\"Resource\": \"*\"}]}"

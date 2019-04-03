@@ -1,0 +1,21 @@
+# assume-role policy
+
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "",
+			"Effect": "Allow",
+			"Principal": { "AWS": "***USERARN***" },
+			"Action": "sts:AssumeRole",
+			"Condition": { "Bool": { "aws:MultiFactorAuthPresent": true } }
+		}
+	]
+}
+
+# to put this policy into a bash variable, use:
+
+assumerolepolicy="{\"Version\": \"2012-10-17\",\"Statement\": [{\"Sid\": \"\",\"Effect\": \"Allow\",\"Principal\": {\"AWS\": \""
+assumerolepolicy+=$userarn
+assumerolepolicy+="\"},\"Action\": \"sts:AssumeRole\",\"Condition\": { \"Bool\": { \"aws:MultiFactorAuthPresent\": true } }}]}"
+echo assumerolepolicy=$assumerolepolicy

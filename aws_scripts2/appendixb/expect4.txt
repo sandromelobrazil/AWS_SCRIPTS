@@ -1,0 +1,53 @@
+$ ./expect4.sh
+spawn ./expect3.sh
+
+ex1.sh file:
+#!/usr/bin/expect -f
+set timeout -1
+send_user "code1: "
+expect_user -re "(.*)\n"
+send_user "you typed code1: $expect_out(1,string)\n"
+spawn ./ex2.sh
+expect "code2: "
+send $expect_out(1,string)\n
+interact
+
+
+ex2.sh file:
+#!/usr/bin/expect -f
+set timeout -1
+send_user "code2: "
+expect_user -re "(.*)\n"
+send_user "ex1.sh typed code2: $expect_out(1,string)\n"
+
+code1: 1111
+you typed code1: 1111
+spawn ./ex2.sh
+code2: 1111
+ex1.sh typed code2: 1111
+expect3.sh finished
+
+second run
+spawn ./expect3.sh
+
+ex1.sh file:
+#!/usr/bin/expect -f
+set timeout -1
+send_user "code1: "
+expect_user -re "(.*)\n"
+send_user "you typed code1: $expect_out(1,string)\n"
+spawn ./ex2.sh
+expect "code2: "
+send $expect_out(1,string)\n
+interact
+
+
+ex2.sh file:
+#!/usr/bin/expect -f
+set timeout -1
+send_user "code2: "
+expect_user -re "(.*)\n"
+send_user "ex1.sh typed code2: $expect_out(1,string)\n"
+
+code1: 2222
+^C

@@ -1,0 +1,24 @@
+# cat /etc/shadow
+root:$6$7YhGRUW0$Fa6Jxn3iwGTOKcu8lu9OyfR9E6TgwbCwcKeuR3bShc3G.RdalxHtRPh4U.wRewJwW2UTZRM.NXeP7BiPFGDuQ0:16590::::::
+bin:*:16323:0:99999:7:::
+daemon:*:16323:0:99999:7:::
+adm:*:16323:0:99999:7:::
+lp:*:16323:0:99999:7:::
+sync:*:16323:0:99999:7:::
+shutdown:*:16323:0:99999:7:::
+halt:*:16323:0:99999:7:::
+mail:*:16323:0:99999:7:::
+uucp:*:16323:0:99999:7:::
+operator:*:16323:0:99999:7:::
+games:*:16323:0:99999:7:::
+gopher:*:16323:0:99999:7:::
+ftp:*:16323:0:99999:7:::
+nobody:*:16323:0:99999:7:::
+ntp:!!:16512::::::
+saslauth:!!:16512::::::
+mailnull:!!:16512::::::
+smmsp:!!:16512::::::
+sshd:!!:16512::::::
+dbus:!!:16512::::::
+ec2-user:!!:16590:0:99999:7:::
+ssher:$6$p0veThQg$BmqIrGowmauNkZU6lFLXTZjGp5M/T3UKJqv9yfREQg10Goetak23iB0fTT2ZOLNe0SNP0E9LslXEemUd.2wW10:16590:0:99999:7:::
