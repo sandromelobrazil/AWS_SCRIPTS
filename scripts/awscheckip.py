@@ -32,18 +32,18 @@ def cmd(_command):
 	checkip = subprocess.getoutput(_command)
 	print(checkip)
 
-def elastic_ip:
+def elastic_ip():
 	cmd(awscmd1)
 	print(MSG_NOTFUNC)
 
-def instance_ip:
+def instance_ip():
 	cmd(awscmd1)
 	print(MSG_NOTFUNC)
 
-def network_ip:
+def network_ip():
 	cmd(awscmd1)
 
-def all_ip:
+def all_ip():
 	elastic_ip
 	instance_ip
 	network_ip
