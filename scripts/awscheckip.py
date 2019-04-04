@@ -5,17 +5,20 @@ import sys
 msg1="Sintaxe correta.:  python3 "
 msg2=" all  | elastic |  instance | network "
 msg_notfunc="Funcionalidade nao implementada"
+mns_error="Opcao errada"
 
-'''
+def help_param():
+   	print(" ")
+    	print(msg1 + (str(sys.argv[0]))  + " " + msg2)
+    	print(" Ex.: python " + (str(sys.argv[0])) + "all ")
+    	print(" Ex.: python " + (str(sys.argv[0])) + "elastic ")
+   	print(" Ex.: python " + (str(sys.argv[0])) + "instance ")
+    	print(" Ex.: python " + (str(sys.argv[0])) + "network ")
+    	print(" ")
+
 if len(sys.argv) != 2:
-    print(" ")
-    print(msg1 + (str(sys.argv[0]))  + " " + msg2)
-    print(" Ex.: python " + (str(sys.argv[0])) + "all ")
-    print(" Ex.: python " + (str(sys.argv[0])) + "elastic ")
-    print(" Ex.: python " + (str(sys.argv[0])) + "instance ")
-    print(" Ex.: python " + (str(sys.argv[0])) + "network ")
-    print(" ")
-    sys.exit(1)
+	help_param
+	sys.exit(1)
 
 
 print(" ")
@@ -23,7 +26,6 @@ print('=' * 50)
 print "KEEP WALKING - aguarde que a magica vai comecar"
 print('=' * 50)
 
-'''
 awscmd1='aws ec2 describe-network-interfaces --query NetworkInterfaces[*].Association.PublicIp --output text'
 myquery = str(sys.argv[1])
 
