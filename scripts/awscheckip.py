@@ -2,19 +2,19 @@
 import subprocess
 import sys
 
-MSG1="Sintaxe correta.:  python3 "
-MSG2=" ALL  | ELASTIC |  INSTANCE | NETWORK "
+msg1="Sintaxe correta.:  python3 "
+msg2=" all  | elastic |  instance | network "
 
-MSG_NOTFUNC="Funcionalidade nao implementada"
+msg_notfunc="Funcionalidade nao implementada"
 
 '''
-if len(sys.argv) != 3:
+if len(sys.argv) != 2:
     print(" ")
-    print(MSG1 + (str(sys.argv[0]))  + " " + MSG2)
-    print(" Ex.: python " + (str(sys.argv[0])) + "ALL ")
-    print(" Ex.: python " + (str(sys.argv[0])) + "ELASTIC ")
-    print(" Ex.: python " + (str(sys.argv[0])) + "INSTANCE ")
-    print(" Ex.: python " + (str(sys.argv[0])) + "NETWORK ")
+    print(msg1 + (str(sys.argv[0]))  + " " + msg2)
+    print(" Ex.: python " + (str(sys.argv[0])) + "all ")
+    print(" Ex.: python " + (str(sys.argv[0])) + "elastic ")
+    print(" Ex.: python " + (str(sys.argv[0])) + "instance ")
+    print(" Ex.: python " + (str(sys.argv[0])) + "network ")
     print(" ")
     sys.exit(1)
 
@@ -34,11 +34,11 @@ def cmd(_command):
 
 def elastic_ip():
 	cmd(awscmd1)
-	print(MSG_NOTFUNC)
+	print(msg_notfunc)
 
 def instance_ip():
 	cmd(awscmd1)
-	print(MSG_NOTFUNC)
+	print(msg_notfunc)
 
 def network_ip():
 	cmd(awscmd1)
@@ -47,7 +47,7 @@ def all_ip():
 	elastic_ip
 	instance_ip
 	network_ip
-	print(MSG_NOTFUNC)
+	print(msg_notfunc)
 
 
 
