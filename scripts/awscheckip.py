@@ -4,26 +4,29 @@ import sys
 
 msg1="Sintaxe correta.:  python3 "
 msg2=" all  | elastic |  instance | network "
+msg3="IMPORTANT: Este script foi desenvolvido em Python 3"
+msg4="Iniciando a consulta na AWS"
 msg_notfunc="Funcionalidade nao implementada"
-mns_error="Opcao errada"
+msg_error="Opcao errada"
 
 def help_param():
-   	print(" ")
-    	print(msg1 + (str(sys.argv[0]))  + " " + msg2)
-    	print(" Ex.: python " + (str(sys.argv[0])) + "all ")
-    	print(" Ex.: python " + (str(sys.argv[0])) + "elastic ")
-   	print(" Ex.: python " + (str(sys.argv[0])) + "instance ")
-    	print(" Ex.: python " + (str(sys.argv[0])) + "network ")
-    	print(" ")
-
+    print(" ")
+    print(msg1 + (str(sys.argv[0]))  + " " + msg2)
+    print(" Ex.: " + (str(sys.argv[0])) + "all ")
+    print(" Ex.: " + (str(sys.argv[0])) + "elastic ")
+    print(" Ex.: " + (str(sys.argv[0])) + "instance ")
+    print(" Ex.: " + (str(sys.argv[0])) + "network ")
+    print(" ")
+    print(msg3)
+    
 if len(sys.argv) != 2:
-	help_param
-	sys.exit(1)
+    help_param
+    sys.exit(1)
 
 
 print(" ")
 print('=' * 50)
-print "KEEP WALKING - aguarde que a magica vai comecar"
+print(msg4)
 print('=' * 50)
 
 awscmd1='aws ec2 describe-network-interfaces --query NetworkInterfaces[*].Association.PublicIp --output text'
@@ -52,17 +55,20 @@ def all_ip():
 
 
 def main_ip():
-	if myquery == elastic:
-  		elastic_ip
+    if myquery == elastic:
+        elastic_ip
 
-	elif myquery == instance:
-		instance_ip
+    elif myquery == instance:
+        instance_ip
 
-	elif network  == network_ip:
-		instance_ip
+    elif myquery == network:
+        network_ip
 
-	else:
-		all_ip
+    elif myquery == all:
+        all_ip
+
+    else:
+        print(msg4)
 
 main_ip
 
