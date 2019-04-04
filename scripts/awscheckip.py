@@ -49,7 +49,7 @@ def all_ip():
 	print(msg_notfunc)
 
 
-def mainip():
+def main_ip():
 	if myquery == elastic:
   		elastic_ip
 
@@ -62,5 +62,5 @@ def mainip():
 	else:
 		all_ip
 
-
+main_ip
 
