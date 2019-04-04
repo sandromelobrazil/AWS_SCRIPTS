@@ -37,13 +37,18 @@ awscmd1='aws ec2 describe-network-interfaces --query NetworkInterfaces[*].Associ
 myquery = str(sys.argv[1])
 
 def cmd(_command):
-	checkip = subprocess.getoutput(_command)
-	print(checkip)
-
-
+    print(_command)
+    checkip = subprocess.getoutput(_command)
+    print(checkip)
+    
 def elastic_ip():
-	cmd(awscmd1)
-	print(msg_notfunc)
+    print("OK")
+    cmd(awscmd1)
+#	print(msg_notfunc)
+#print(awscmd1)
+#print (myquery)
+
+elastic_ip()
 
 '''
 def instance_ip():
