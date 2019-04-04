@@ -48,8 +48,19 @@ def all_ip():
 	network_ip
 	print(msg_notfunc)
 
-myoptions = { elastic : elastic_ip, instance : instance_ip, network : network_ip, all : all_ip }
-myoptions[myquery]()
+
+def mainip():
+	if myquery == elastic:
+  		elastic_ip
+
+	elif myquery == instance:
+		instance_ip
+
+	elif network  == network_ip:
+		instance_ip
+
+	else:
+		all_ip
 
 
 
