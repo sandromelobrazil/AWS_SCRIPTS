@@ -5,6 +5,7 @@ import sys
 MSG1="Sintaxe correta.:  python3 "
 MSG2=" ALL  | ELASTIC |  INSTANCE | NETWORK "
 
+MSG_NOTFUNC="Funcionalidade nao implementada"
 
 '''
 if len(sys.argv) != 3:
@@ -31,8 +32,24 @@ def cmd(_command):
 	checkip = subprocess.getoutput(_command)
 	print(checkip)
 
+def elastic_ip:
+	cmd(awscmd1)
+	print(MSG_NOTFUNC)
+
+def instance_ip:
+	cmd(awscmd1)
+	print(MSG_NOTFUNC)
+
+def network_ip:
+	cmd(awscmd1)
+
+def all_ip:
+	elastic_ip
+	instance_ip
+	network_ip
+	print(MSG_NOTFUNC)
 
 
-cmd(awscmd1)
+
 
 
