@@ -4,7 +4,6 @@ import sys
 
 msg1="Sintaxe correta.:  python3 "
 msg2=" all  | elastic |  instance | network "
-
 msg_notfunc="Funcionalidade nao implementada"
 
 '''
@@ -18,7 +17,6 @@ if len(sys.argv) != 2:
     print(" ")
     sys.exit(1)
 
-query = str(sys.argv[1])
 
 print(" ")
 print('=' * 50)
@@ -27,6 +25,7 @@ print('=' * 50)
 
 '''
 awscmd1='aws ec2 describe-network-interfaces --query NetworkInterfaces[*].Association.PublicIp --output text'
+myquery = str(sys.argv[1])
 
 def cmd(_command):
 	checkip = subprocess.getoutput(_command)
@@ -49,7 +48,8 @@ def all_ip():
 	network_ip
 	print(msg_notfunc)
 
-
+myoptions = { elastic : elastic_ip, instance : instance_ip, network : network_ip, all : all_ip }
+myoptions[myquery]()
 
 
 
