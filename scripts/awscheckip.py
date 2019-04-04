@@ -9,8 +9,6 @@ msg4="Iniciando a consulta na AWS"
 msg_notfunc="Funcionalidade nao implementada"
 msg_error="Opcao errada"
 
-print(str(sys.argv))
-print(len(sys.argv))
 
 def func_param():
     print(msg3)
@@ -27,61 +25,52 @@ if len(sys.argv) != 2:
     func_param
     sys.exit(1)
 
-
-print(" ")
-print("=" * 50)
-print(msg4)
-print('=' * 50)
+def func_msgstart():
+    print(" ")
+    print("=" * 50)
+    print(msg4)
+    print('=' * 50)
 
 awscmd1='aws ec2 describe-network-interfaces --query NetworkInterfaces[*].Association.PublicIp --output text'
 myquery = str(sys.argv[1])
 
 def cmd(_command):
-    print(_command)
+    func_msgstart()
     checkip = subprocess.getoutput(_command)
     print(checkip)
     
 def elastic_ip():
-    print("OK")
-    cmd(awscmd1)
-#	print(msg_notfunc)
-#print(awscmd1)
-#print (myquery)
-
-elastic_ip()
-
-'''
-def instance_ip():
-	cmd(awscmd1)
 	print(msg_notfunc)
+    #cmd(awscmd1)
+
+def instance_ip():
+	print(msg_notfunc)
+	#cmd(awscmd1)
 
 def network_ip():
 	cmd(awscmd1)
 
 def all_ip():
-	elastic_ip
-	instance_ip
-	network_ip
+	instance_ip()
+	instance_ip()
+	network_ip()
 	print(msg_notfunc)
-
-
+    
 def main_ip():
-    if myquery == elastic:
-        elastic_ip
+    print(myquery)
+    if myquery == "elastic":
+        elastic_ip()
 
-    elif myquery == instance:
-        instance_ip
+    elif myquery == "instance":
+        instance_ip()
 
-    elif myquery == network:
-        network_ip
+    elif myquery == "network":
+        network_ip()
 
-    elif myquery == all:
-        all_ip
+    elif myquery == "all":
+        all_ip()
 
     else:
-        print(msg4)
+        print(msg_error)
 
-main_ip
-'''
-
-
+main_ip()
