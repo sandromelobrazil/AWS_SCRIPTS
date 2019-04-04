@@ -9,15 +9,21 @@ msg4="Iniciando a consulta na AWS"
 msg_notfunc="Funcionalidade nao implementada"
 msg_error="Opcao errada"
 
+print(str(sys.argv))
+print(len(sys.argv))
+print(msg4)
+
 def help_param():
     print(" ")
     print(msg1 + (str(sys.argv[0]))  + " " + msg2)
-    print(" Ex.: " + (str(sys.argv[0])) + "all ")
-    print(" Ex.: " + (str(sys.argv[0])) + "elastic ")
-    print(" Ex.: " + (str(sys.argv[0])) + "instance ")
-    print(" Ex.: " + (str(sys.argv[0])) + "network ")
+    print(" Ex.: " + (str(sys.argv[0])) + " all ")
+    print(" Ex.: " + (str(sys.argv[0])) + " elastic ")
+    print(" Ex.: " + (str(sys.argv[0])) + " instance ")
+    print(" Ex.: " + (str(sys.argv[0])) + " network ")
     print(" ")
     print(msg3)
+    return 
+
     
 if len(sys.argv) != 2:
     help_param
@@ -54,6 +60,7 @@ def all_ip():
 	print(msg_notfunc)
 
 
+'''
 def main_ip():
     if myquery == elastic:
         elastic_ip
@@ -71,4 +78,6 @@ def main_ip():
         print(msg4)
 
 main_ip
+'''
+
 
