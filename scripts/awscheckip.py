@@ -1,5 +1,5 @@
 #!/bin/python3
-import commands 
+import subprocess
 import sys
 
 MSG1="Sintaxe correta.:  python3 "
@@ -28,8 +28,8 @@ print('=' * 50)
 awscmd1='aws ec2 describe-network-interfaces --query NetworkInterfaces[*].Association.PublicIp --output text'
 
 def cmd(_command):
-	checkip = commands.getoutput(_command)
-	print checkip
+	checkip = subprocess.getoutput(_command)
+	print(checkip)
 
 
 
