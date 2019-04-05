@@ -1,6 +1,7 @@
 #!/bin/python3
 import subprocess
 import sys
+import socket
 
 msg1="Sintaxe correta.:  python3 "
 msg2="[ all  | elastic |  instance | network ]"
@@ -41,6 +42,12 @@ awscmd2='aws ec2 describe-instances --output text'
 #    newip.append(_ip)
 
 myquery = str(sys.argv[1])
+'''
+def cmd(_command):
+    func_msgstart()
+    checkip = subprocess.getoutput(_command)
+    print(checkip)
+'''
 
 def cmd(_command):
     func_msgstart()
