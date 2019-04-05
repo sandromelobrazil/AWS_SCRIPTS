@@ -2,6 +2,7 @@
 import subprocess
 import sys
 import socket
+import re
 
 msg1="Sintaxe correta.:  python3 "
 msg2="[ all  | elastic |  instance | network ]"
@@ -51,8 +52,15 @@ def cmd(_command):
 
 def cmd(_command):
     func_msgstart()
-    checkip = subprocess.getoutput(_command)
-    print(checkip)
+    check_ip = subprocess.getoutput(_command)
+    print(check_ip)
+    get_ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', check_ip)
+    print("-> " + get_ip)
+    for _ip in get_ip:
+        _ok_ip.append(_ip)
+        print(ok_ip)
+       # _name = socket.gethostbyname(_ip)
+       # print("IP: " + _ip + " Nome: " + _name)
     
 def elastic_ip():
     cmd(awscmd2)
