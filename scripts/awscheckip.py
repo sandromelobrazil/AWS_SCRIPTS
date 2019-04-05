@@ -53,14 +53,13 @@ def cmd(_command):
 def cmd(_command):
     func_msgstart()
     check_ip = subprocess.getoutput(_command)
-    print(check_ip)
-    get_ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', check_ip)
-    print("-> " + get_ip)
-    for _ip in get_ip:
-        _ok_ip.append(_ip)
-        print(ok_ip)
-       # _name = socket.gethostbyname(_ip)
-       # print("IP: " + _ip + " Nome: " + _name)
+    print("####")
+    print(type(check_ip))
+    
+    _break = 0
+    while _break < 1:
+        print(check_ip)
+        _break += 1
     
 def elastic_ip():
     cmd(awscmd2)
