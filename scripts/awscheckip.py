@@ -32,6 +32,14 @@ def func_msgstart():
     print('=' * 50)
 
 awscmd1='aws ec2 describe-network-interfaces --query NetworkInterfaces[*].Association.PublicIp --output text'
+awscmd2='aws ec2 describe-instances --output text'
+#|grep ^ASSOCIATION | grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b"'
+#|sort |uniq
+
+#regexips = re.findall(r'[0-9]+(?:\.[0-9]+){3}', ip)'
+# for ip in regexips:
+#    newip.append(ip)
+
 myquery = str(sys.argv[1])
 
 def cmd(_command):
@@ -40,8 +48,7 @@ def cmd(_command):
     print(checkip)
     
 def elastic_ip():
-	print(msg_notfunc)
-    #cmd(awscmd1)
+    cmd(awscmd2)
 
 def instance_ip():
 	print(msg_notfunc)
@@ -51,7 +58,7 @@ def network_ip():
 	cmd(awscmd1)
 
 def all_ip():
-	instance_ip()
+	elastic_ip()
 	instance_ip()
 	network_ip()
 	print(msg_notfunc)
