@@ -37,8 +37,8 @@ awscmd2='aws ec2 describe-instances --output text'
 #|sort |uniq
 
 #regexips = re.findall(r'[0-9]+(?:\.[0-9]+){3}', ip)'
-# for ip in regexips:
-#    newip.append(ip)
+# for _ip in regexips:
+#    newip.append(_ip)
 
 myquery = str(sys.argv[1])
 
