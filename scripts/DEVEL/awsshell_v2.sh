@@ -2,8 +2,8 @@
 #!/bin/bash
 
 REGIONS="sa-east-1 us-east-1 us-west-1 us-west-2"
-#AWS_ACCOUNTS="greenbrasil greendevelop greenhomolog greenprod"
-AWS_ACCOUNTS="greendevelop"
+AWS_ACCOUNTS="greenbrasil greendevelop greenhomolog greenprod"
+#AWS_ACCOUNTS="greendevelop"
 
 
 func_network()
@@ -18,7 +18,7 @@ func_instances()
 
 func_elastic()
 {
-    IPELASTICVPC=$( aws ec2 describe-addresses --filter Name=domain,Values=vpc --output json |grep PublicIp | awk '{ print $2}' | cut -f 2 -d \" | grep ^[0-9] )
+    aws ec2 describe-addresses --filter Name=domain,Values=vpc --output json --region $1 --profile $2 | grep PublicIp  | awk '{ print $2}' | cut -f 2 -d \" | grep ^[0-9] 
 }
 
 
@@ -34,12 +34,12 @@ func_geteach_ip()
 {
     _PROFILE="$1"
     
-#    for _REGION in $(echo $REGIONS)
-#      do
-#        echo "...::: Network IP -> Region $_REGION by Profile $_PROFILE :::..."
-#        func_listip $( func_network $_REGION $_PROFILE )
-#        echo .
-#    done
+    for _REGION in $(echo $REGIONS)
+      do
+        echo "...::: Network IP -> Region $_REGION by Profile $_PROFILE :::..."
+        func_listip $( func_network $_REGION $_PROFILE )
+        echo .
+    done
 
     for _REGION in $(echo $REGIONS)
       do
@@ -48,9 +48,12 @@ func_geteach_ip()
         echo .
      done
 
-#    echo "...::: ELASTIC VPC IPs :::..." 
-#    func_listip "$IPELASTICVPC"
-#    echo .
+    for _REGION in $(echo $REGIONS)
+      do
+        echo "...::: ELASTIC IP  -> Region $_REGION by Profile $_PROFILE :::..." 
+        func_listip $( func_elastic $_REGION $_PROFILE )
+        echo .
+     done
 }
 
 
