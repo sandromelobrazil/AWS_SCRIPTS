@@ -13,8 +13,7 @@ func_network()
            
 func_instances()
 {
-    IPINSTANCES=$( aws ec2 describe-instances --output text |grep ^ASSOCIATION | grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b" |sort |uniq )
-    return $IPINSTANCES
+    IPINSTANCES=$( aws ec2 describe-instances --output text  --region $1 --profile $2 |grep ^ASSOCIATION | grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b" |sort |uniq )
 }
 
 func_elastic()
@@ -33,19 +32,21 @@ func_listip()
 
 func_geteach_ip()
 {
-    for _REGION in $(echo $REGIONS)
-      do
-            echo "RUNNING FUNC_GETEACH_IP"
-            #sleep 10s
-        _PROFILE="$1"
-        echo "...::: Network IP -> Region $_REGION by Profile $_PROFILE :::..."
-        func_listip $( func_network $_REGION $_PROFILE )
+    _PROFILE="$1"
+    
+#    for _REGION in $(echo $REGIONS)
+#      do
+#        echo "...::: Network IP -> Region $_REGION by Profile $_PROFILE :::..."
+#        func_listip $( func_network $_REGION $_PROFILE )
         echo .
     done
 
-#    echo "...::: INSTANCE IP :::..." 
-#    func_listip "$IPINSTANCES"
-#    echo .
+    for _REGION in $(echo $REGIONS)
+      do
+        echo "...::: INSTANCE IP  -> Region $_REGION by Profile $_PROFILE :::..." 
+        func_listip $( func_instances $_REGION $_PROFILE )
+        echo .
+     done
 
 #    echo "...::: ELASTIC VPC IPs :::..." 
 #    func_listip "$IPELASTICVPC"
