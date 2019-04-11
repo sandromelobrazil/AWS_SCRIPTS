@@ -6,6 +6,7 @@ AWS_ACCOUNTS="greenbrasil greendevelop greenhomolog greenprod"
 #AWS_ACCOUNTS="greendevelop"
 
 
+
 func_network()
 {
     aws ec2 describe-network-interfaces --query NetworkInterfaces[*].Association.PublicIp --output text --region $1 --profile $2
