@@ -14,6 +14,7 @@ func_network()
 func_instances()
 {
     IPINSTANCES=$( aws ec2 describe-instances --output text |grep ^ASSOCIATION | grep -oE "\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b" |sort |uniq )
+    return $IPINSTANCES
 }
 
 func_elastic()
@@ -24,7 +25,7 @@ func_elastic()
 
 func_listip()
 {
-    for _IP in $( echo $1 )
+    for _IP in $( echo $* )
       do
         echo "[+] IP Publico: $_IP"
     done
@@ -34,8 +35,10 @@ func_geteach_ip()
 {
     for _REGION in $(echo $REGIONS)
       do
+            echo "RUNNING FUNC_GETEACH_IP"
+            #sleep 10s
         _PROFILE="$1"
-        echo "...::: Network IP :::..."
+        echo "...::: Network IP -> Region $_REGION by Profile $_PROFILE :::..."
         func_listip $( func_network $_REGION $_PROFILE )
         echo .
     done
@@ -69,8 +72,6 @@ func_account()
             _PROFILE="checkip_dv" 
             echo "$_MSGCOUNT Greendevelop"
             echo "Desenvolvimento"
-            echo "RUNNING FUNC_ACCOUNT"
-            sleep 10s
             func_geteach_ip "$_PROFILE"
             echo . 
 
