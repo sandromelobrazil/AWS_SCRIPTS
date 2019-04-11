@@ -16,6 +16,7 @@ for _ACCOUNT in $(echo $AWS_ACCOUNTS)
   do
     [ -f ${ACCOUNT_NOW}_NESSUS_LIST_IP.txt ] && rm -f ${ACCOUNT_NOW}_NESSUS_LIST_IP.txt
 done 
+    [ -f ALL_NESSUS_LIST_IP.txt ] && rm -f ALL_NESSUS_LIST_IP.txt
 }
 
 func_head()
@@ -48,6 +49,7 @@ func_listip()
     for _IP in $( echo "$*" )
       do
         echo " $_IP" >> ${ACCOUNT_NOW}_NESSUS_LIST_IP.txt
+        echo " $_IP" >> ALL_NESSUSS_LIST_IP.txt
         echo "[+] IP Publico: $_IP"
     done
 }
