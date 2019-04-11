@@ -1,11 +1,22 @@
-
 #!/bin/bash
 
 REGIONS="sa-east-1 us-east-1 us-west-1 us-west-2"
 AWS_ACCOUNTS="greenbrasil greendevelop greenhomolog greenprod"
-#AWS_ACCOUNTS="greendevelop"
-
-
+DATA=$(date +%d/%m/%Y-%H:%M:%S)
+CCOR='\033[0;32m'
+NCOR='\033[0m'
+OK="[*]"
+OK_GREEN=$( echo -e $CCOR $OK $NCOR)
+VERSION="v1"
+MSG_TITLE="Amazon EC2 Simple Script Inventory IP $VERSION "
+func_head()
+{
+    echo " "
+    echo -e "$CCOR    __|  __|_  )"
+    echo -e "    _|  (     / $NCOR   $MSG_TITLE" 
+    echo -e "$CCOR    ___|\___|___| $NCOR"
+    echo " "
+}
 
 func_network()
 {
@@ -30,6 +41,18 @@ func_listip()
         echo "[+] IP Publico: $_IP"
     done
 }
+
+
+func_listip_report()
+{
+    for _IP in $( echo "$*" )
+      do
+        echo " $_IP"i >> ${ACCOUNT}_NESSUS_LIST_IP.txt
+     done
+}
+
+
+
 
 func_geteach_ip()
 {
@@ -60,6 +83,7 @@ func_geteach_ip()
 
 func_account()
 {
+    func_head
 
     _MSGCOUNT="Coleta de informacoes da conta "
     _ACCOUNT="$1"
@@ -107,5 +131,5 @@ func_account()
 for _ACCOUNT in $(echo $AWS_ACCOUNTS)
   do
     func_account "$_ACCOUNT"
-
+    export ACCOUNT_NOW="$_ACCOUNT"
 done 
