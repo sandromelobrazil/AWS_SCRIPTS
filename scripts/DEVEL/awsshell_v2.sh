@@ -9,6 +9,15 @@ OK="[*]"
 OK_GREEN=$( echo -e $CCOR $OK $NCOR)
 VERSION="v1"
 MSG_TITLE="Amazon EC2 Simple Script Inventory IP $VERSION "
+
+func_clean()
+{
+for _ACCOUNT in $(echo $AWS_ACCOUNTS)
+  do
+    [ -f ${ACCOUNT_NOW}_NESSUS_LIST_IP.txt ] && rm -f ${ACCOUNT_NOW}_NESSUS_LIST_IP.txt
+done 
+}
+
 func_head()
 {
     echo " "
@@ -38,18 +47,11 @@ func_listip()
 {
     for _IP in $( echo "$*" )
       do
+        echo " $_IP" >> ${ACCOUNT_NOW}_NESSUS_LIST_IP.txt
         echo "[+] IP Publico: $_IP"
     done
 }
 
-
-func_listip_report()
-{
-    for _IP in $( echo "$*" )
-      do
-        echo " $_IP"i >> ${ACCOUNT}_NESSUS_LIST_IP.txt
-     done
-}
 
 
 
@@ -83,7 +85,6 @@ func_geteach_ip()
 
 func_account()
 {
-    func_head
 
     _MSGCOUNT="Coleta de informacoes da conta "
     _ACCOUNT="$1"
@@ -127,6 +128,9 @@ func_account()
         ;;
     esac
 }
+
+func_head
+func_clean
 
 for _ACCOUNT in $(echo $AWS_ACCOUNTS)
   do
