@@ -44,12 +44,39 @@ func_elastic()
 }
 
 
+#greenprod
+#greenhomolog
+#greendevelop
+#greenbrasil
+
 func_listip()
 {
     for _IP in $( echo "$*" )
       do
-        echo " $_IP" >> ${ACCOUNT_NOW}_NESSUS_LIST_IP.txt
-        echo " $_IP" >> ALL_NESSUSS_LIST_IP.txt
+        echo "$_IP" >> "ALL_NESSUS_LIST_IP.txt "
+        
+        if [ -f greenprod.NESSUS_LIST_IP.txt ] 
+            then 
+                echo "$_IP" >> "greenprod_NESSUS_LIST_IP.txt "
+
+        elif [ -f greenhomolog.NESSUS_LIST_IP.txt ] 
+            then
+                echo "$_IP" >> "greenhomolog_NESSUS_LIST_IP.txt "
+
+
+        elif [ -f greendevelop.NESSUS_LIST_IP.txt ] 
+            then
+                echo "$_IP" >> "greendevelop_NESSUS_LIST_IP.txt "
+
+
+        elif [ -f greenbrasil.NESSUS_LIST_IP.txt ] 
+            then
+                echo "$_IP" >> "greenbrasil_NESSUS_LIST_IP.txt "
+        else
+                echo "Alguma coisa deu errado" 
+                exit 1
+        fi
+
         echo "[+] IP Publico: $_IP"
     done
 }
@@ -85,6 +112,7 @@ func_geteach_ip()
 }
 
 
+
 func_account()
 {
 
@@ -96,6 +124,7 @@ func_account()
             _PROFILE="checkip_br" 
             echo "$_MSGCOUNT Greenbrasil"
             echo "Green Brasil"
+            : > ${_ACCOUNT}_NESSUS_LIST_IP.txt
             func_geteach_ip "$_PROFILE"
             echo . 
         ;;
@@ -104,6 +133,7 @@ func_account()
             _PROFILE="checkip_dv" 
             echo "$_MSGCOUNT Greendevelop"
             echo "Desenvolvimento"
+            : > ${_ACCOUNT}_NESSUS_LIST_IP.txt
             func_geteach_ip "$_PROFILE"
             echo . 
 
@@ -113,6 +143,8 @@ func_account()
             _PROFILE="checkip_hm" 
             echo "$_MSGCOUNT Greenhomolog"
             echo "Homologacao"
+            : > ${_ACCOUNT}_NESSUS_LIST_IP.txt
+            func_geteach_ip "$_PROFILE"
             echo . 
 
         ;;
@@ -121,6 +153,8 @@ func_account()
             _PROFILE="checkip_pdv" 
             echo "$_MSGCOUNT Greenprod"
             echo "Producao"
+            : > ${_ACCOUNT}_NESSUS_LIST_IP.txt
+            func_geteach_ip "$_PROFILE"
             echo . 
 
         ;;
@@ -137,5 +171,4 @@ func_clean
 for _ACCOUNT in $(echo $AWS_ACCOUNTS)
   do
     func_account "$_ACCOUNT"
-    export ACCOUNT_NOW="$_ACCOUNT"
 done 
