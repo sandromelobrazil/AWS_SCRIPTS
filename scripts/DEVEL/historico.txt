@@ -1,0 +1,341 @@
+ 
+[0;32m    __|  __|_  )
+    _|  (     / [0m   Amazon EC2 Simple Script Inventory IP v1 
+[0;32m    ___|\___|___| [0m
+ 
+Coleta de informacoes da conta  Greenbrasil
+Green Brasil
+...::: Network IP -> Region sa-east-1 by Profile checkip_br :::...
+[0;32m [*] [0m IP Publico: 18.228.13.161
+[0;32m [*] [0m IP Publico: 18.228.111.237
+[0;32m [*] [0m IP Publico: 18.228.171.41
+[0;32m [*] [0m IP Publico: 18.228.50.106
+[0;32m [*] [0m IP Publico: 18.228.102.28
+.
+...::: Network IP -> Region us-east-1 by Profile checkip_br :::...
+[0;32m [*] [0m IP Publico: 3.208.20.245
+[0;32m [*] [0m IP Publico: 18.212.156.120
+[0;32m [*] [0m IP Publico: 3.88.155.63
+[0;32m [*] [0m IP Publico: 52.0.171.238
+[0;32m [*] [0m IP Publico: 100.25.52.131
+[0;32m [*] [0m IP Publico: 52.201.179.172
+[0;32m [*] [0m IP Publico: 18.207.122.11
+[0;32m [*] [0m IP Publico: 3.94.111.23
+.
+...::: Network IP -> Region us-west-1 by Profile checkip_br :::...
+.
+...::: Network IP -> Region us-west-2 by Profile checkip_br :::...
+.
+...::: INSTANCE IP  -> Region sa-east-1 by Profile checkip_br :::...
+[0;32m [*] [0m IP Publico: 18.228.13.161
+[0;32m [*] [0m IP Publico: 18.228.171.41
+[0;32m [*] [0m IP Publico: 18.228.50.106
+.
+...::: INSTANCE IP  -> Region us-east-1 by Profile checkip_br :::...
+[0;32m [*] [0m IP Publico: 18.207.122.11
+[0;32m [*] [0m IP Publico: 18.212.156.120
+[0;32m [*] [0m IP Publico: 3.208.20.245
+[0;32m [*] [0m IP Publico: 3.88.155.63
+[0;32m [*] [0m IP Publico: 3.94.111.23
+.
+...::: INSTANCE IP  -> Region us-west-1 by Profile checkip_br :::...
+.
+...::: INSTANCE IP  -> Region us-west-2 by Profile checkip_br :::...
+.
+...::: ELASTIC IP  -> Region sa-east-1 by Profile checkip_br :::...
+[0;32m [*] [0m IP Publico: 18.228.102.121
+[0;32m [*] [0m IP Publico: 18.228.102.28
+[0;32m [*] [0m IP Publico: 18.228.50.106
+[0;32m [*] [0m IP Publico: 18.231.14.111
+[0;32m [*] [0m IP Publico: 54.94.172.248
+[0;32m [*] [0m IP Publico: 54.94.177.167
+.
+...::: ELASTIC IP  -> Region us-east-1 by Profile checkip_br :::...
+[0;32m [*] [0m IP Publico: 100.25.52.131
+.
+...::: ELASTIC IP  -> Region us-west-1 by Profile checkip_br :::...
+.
+...::: ELASTIC IP  -> Region us-west-2 by Profile checkip_br :::...
+.
+.
+Coleta de informacoes da conta  Greendevelop
+Desenvolvimento
+...::: Network IP -> Region sa-east-1 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 18.231.162.16
+[0;32m [*] [0m IP Publico: 18.228.26.108
+[0;32m [*] [0m IP Publico: 18.228.137.175
+[0;32m [*] [0m IP Publico: 54.233.109.190
+[0;32m [*] [0m IP Publico: 54.233.134.178
+[0;32m [*] [0m IP Publico: 18.231.125.74
+[0;32m [*] [0m IP Publico: 18.231.180.58
+[0;32m [*] [0m IP Publico: 18.231.190.79
+[0;32m [*] [0m IP Publico: 18.229.21.47
+[0;32m [*] [0m IP Publico: 18.228.230.174
+[0;32m [*] [0m IP Publico: 18.231.111.119
+[0;32m [*] [0m IP Publico: 18.228.226.142
+[0;32m [*] [0m IP Publico: 18.228.168.179
+[0;32m [*] [0m IP Publico: 54.233.109.16
+[0;32m [*] [0m IP Publico: 54.94.220.255
+[0;32m [*] [0m IP Publico: 54.233.174.152
+[0;32m [*] [0m IP Publico: 18.228.84.23
+[0;32m [*] [0m IP Publico: 54.94.165.60
+[0;32m [*] [0m IP Publico: 54.207.38.106
+[0;32m [*] [0m IP Publico: 18.228.84.80
+[0;32m [*] [0m IP Publico: 18.228.238.114
+[0;32m [*] [0m IP Publico: 54.233.72.230
+[0;32m [*] [0m IP Publico: 18.231.163.59
+[0;32m [*] [0m IP Publico: 18.231.175.42
+[0;32m [*] [0m IP Publico: 18.231.154.18
+[0;32m [*] [0m IP Publico: 18.228.154.103
+[0;32m [*] [0m IP Publico: 18.228.4.209
+[0;32m [*] [0m IP Publico: 52.67.17.203
+[0;32m [*] [0m IP Publico: 18.231.120.133
+.
+...::: Network IP -> Region us-east-1 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 18.210.153.97
+[0;32m [*] [0m IP Publico: 3.93.209.79
+[0;32m [*] [0m IP Publico: 18.207.50.111
+[0;32m [*] [0m IP Publico: 54.204.187.119
+[0;32m [*] [0m IP Publico: 52.87.117.29
+[0;32m [*] [0m IP Publico: 54.209.157.30
+[0;32m [*] [0m IP Publico: 52.204.38.158
+[0;32m [*] [0m IP Publico: 3.95.110.85
+[0;32m [*] [0m IP Publico: 3.87.47.127
+[0;32m [*] [0m IP Publico: 54.163.212.63
+[0;32m [*] [0m IP Publico: 35.170.30.99
+.
+...::: Network IP -> Region us-west-1 by Profile checkip_dv :::...
+.
+...::: Network IP -> Region us-west-2 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 54.213.120.93
+[0;32m [*] [0m IP Publico: 52.24.30.230
+[0;32m [*] [0m IP Publico: 34.215.179.79
+.
+...::: INSTANCE IP  -> Region sa-east-1 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 18.228.137.175
+[0;32m [*] [0m IP Publico: 18.228.154.103
+[0;32m [*] [0m IP Publico: 18.228.226.142
+[0;32m [*] [0m IP Publico: 18.228.238.114
+[0;32m [*] [0m IP Publico: 18.228.26.108
+[0;32m [*] [0m IP Publico: 18.228.4.209
+[0;32m [*] [0m IP Publico: 18.231.111.119
+[0;32m [*] [0m IP Publico: 18.231.120.133
+[0;32m [*] [0m IP Publico: 18.231.125.74
+[0;32m [*] [0m IP Publico: 18.231.154.18
+[0;32m [*] [0m IP Publico: 18.231.162.16
+[0;32m [*] [0m IP Publico: 18.231.163.59
+[0;32m [*] [0m IP Publico: 18.231.175.42
+[0;32m [*] [0m IP Publico: 18.231.180.58
+[0;32m [*] [0m IP Publico: 18.231.190.79
+[0;32m [*] [0m IP Publico: 52.67.17.203
+[0;32m [*] [0m IP Publico: 54.207.38.106
+[0;32m [*] [0m IP Publico: 54.233.109.16
+[0;32m [*] [0m IP Publico: 54.233.109.190
+[0;32m [*] [0m IP Publico: 54.233.134.178
+[0;32m [*] [0m IP Publico: 54.233.174.152
+[0;32m [*] [0m IP Publico: 54.233.72.230
+[0;32m [*] [0m IP Publico: 54.94.220.255
+.
+...::: INSTANCE IP  -> Region us-east-1 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 18.207.50.111
+[0;32m [*] [0m IP Publico: 3.87.47.127
+[0;32m [*] [0m IP Publico: 3.95.110.85
+.
+...::: INSTANCE IP  -> Region us-west-1 by Profile checkip_dv :::...
+.
+...::: INSTANCE IP  -> Region us-west-2 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 34.215.179.79
+[0;32m [*] [0m IP Publico: 52.24.30.230
+[0;32m [*] [0m IP Publico: 52.35.148.72
+.
+...::: ELASTIC IP  -> Region sa-east-1 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 18.228.168.179
+[0;32m [*] [0m IP Publico: 18.228.84.23
+[0;32m [*] [0m IP Publico: 54.232.224.36
+.
+...::: ELASTIC IP  -> Region us-east-1 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 18.207.50.111
+[0;32m [*] [0m IP Publico: 3.209.221.187
+[0;32m [*] [0m IP Publico: 3.93.209.79
+[0;32m [*] [0m IP Publico: 3.95.110.85
+[0;32m [*] [0m IP Publico: 54.204.187.119
+.
+...::: ELASTIC IP  -> Region us-west-1 by Profile checkip_dv :::...
+.
+...::: ELASTIC IP  -> Region us-west-2 by Profile checkip_dv :::...
+[0;32m [*] [0m IP Publico: 52.24.30.230
+[0;32m [*] [0m IP Publico: 52.35.148.72
+[0;32m [*] [0m IP Publico: 54.213.120.93
+.
+.
+Coleta de informacoes da conta  Greenhomolog
+Homologacao
+...::: Network IP -> Region sa-east-1 by Profile checkip_hm :::...
+[0;32m [*] [0m IP Publico: 52.67.167.153
+[0;32m [*] [0m IP Publico: 18.231.44.194
+[0;32m [*] [0m IP Publico: 18.229.21.5
+[0;32m [*] [0m IP Publico: 54.207.103.114
+[0;32m [*] [0m IP Publico: 18.228.241.150
+[0;32m [*] [0m IP Publico: 18.228.43.185
+[0;32m [*] [0m IP Publico: 18.228.248.106
+[0;32m [*] [0m IP Publico: 18.231.115.171
+[0;32m [*] [0m IP Publico: 52.67.120.46
+[0;32m [*] [0m IP Publico: 54.233.74.120
+[0;32m [*] [0m IP Publico: 52.67.102.106
+[0;32m [*] [0m IP Publico: 52.67.251.15
+[0;32m [*] [0m IP Publico: 18.231.90.31
+[0;32m [*] [0m IP Publico: 54.233.118.239
+[0;32m [*] [0m IP Publico: 54.207.112.144
+[0;32m [*] [0m IP Publico: 18.228.199.221
+[0;32m [*] [0m IP Publico: 54.94.154.252
+[0;32m [*] [0m IP Publico: 18.231.120.149
+[0;32m [*] [0m IP Publico: 54.94.218.207
+[0;32m [*] [0m IP Publico: 18.231.163.92
+[0;32m [*] [0m IP Publico: 54.233.210.77
+[0;32m [*] [0m IP Publico: 18.231.171.196
+[0;32m [*] [0m IP Publico: 54.207.32.41
+[0;32m [*] [0m IP Publico: 52.67.32.72
+[0;32m [*] [0m IP Publico: 18.228.241.9
+[0;32m [*] [0m IP Publico: 54.207.13.197
+[0;32m [*] [0m IP Publico: 54.207.72.10
+[0;32m [*] [0m IP Publico: 18.231.112.162
+[0;32m [*] [0m IP Publico: 18.228.19.166
+[0;32m [*] [0m IP Publico: 18.231.38.58
+[0;32m [*] [0m IP Publico: 18.229.6.13
+[0;32m [*] [0m IP Publico: 18.228.235.231
+[0;32m [*] [0m IP Publico: 52.67.103.56
+[0;32m [*] [0m IP Publico: 18.231.156.194
+[0;32m [*] [0m IP Publico: 18.228.11.236
+[0;32m [*] [0m IP Publico: 18.228.3.45
+.
+...::: Network IP -> Region us-east-1 by Profile checkip_hm :::...
+[0;32m [*] [0m IP Publico: 3.90.129.198
+[0;32m [*] [0m IP Publico: 35.169.89.238
+[0;32m [*] [0m IP Publico: 35.170.61.85
+.
+...::: Network IP -> Region us-west-1 by Profile checkip_hm :::...
+.
+...::: Network IP -> Region us-west-2 by Profile checkip_hm :::...
+.
+...::: INSTANCE IP  -> Region sa-east-1 by Profile checkip_hm :::...
+[0;32m [*] [0m IP Publico: 18.228.11.236
+[0;32m [*] [0m IP Publico: 18.228.19.166
+[0;32m [*] [0m IP Publico: 18.228.199.221
+[0;32m [*] [0m IP Publico: 18.228.235.231
+[0;32m [*] [0m IP Publico: 18.228.241.150
+[0;32m [*] [0m IP Publico: 18.228.241.9
+[0;32m [*] [0m IP Publico: 18.228.3.45
+[0;32m [*] [0m IP Publico: 18.228.43.185
+[0;32m [*] [0m IP Publico: 18.231.112.162
+[0;32m [*] [0m IP Publico: 18.231.115.171
+[0;32m [*] [0m IP Publico: 18.231.120.149
+[0;32m [*] [0m IP Publico: 18.231.156.194
+[0;32m [*] [0m IP Publico: 18.231.163.92
+[0;32m [*] [0m IP Publico: 18.231.171.196
+[0;32m [*] [0m IP Publico: 18.231.38.58
+[0;32m [*] [0m IP Publico: 18.231.44.194
+[0;32m [*] [0m IP Publico: 18.231.90.31
+[0;32m [*] [0m IP Publico: 52.67.102.106
+[0;32m [*] [0m IP Publico: 52.67.103.56
+[0;32m [*] [0m IP Publico: 52.67.120.46
+[0;32m [*] [0m IP Publico: 52.67.167.153
+[0;32m [*] [0m IP Publico: 52.67.251.15
+[0;32m [*] [0m IP Publico: 52.67.32.72
+[0;32m [*] [0m IP Publico: 54.207.103.114
+[0;32m [*] [0m IP Publico: 54.207.13.197
+[0;32m [*] [0m IP Publico: 54.207.32.41
+[0;32m [*] [0m IP Publico: 54.207.72.10
+[0;32m [*] [0m IP Publico: 54.233.210.77
+[0;32m [*] [0m IP Publico: 54.233.74.120
+[0;32m [*] [0m IP Publico: 54.94.218.207
+.
+...::: INSTANCE IP  -> Region us-east-1 by Profile checkip_hm :::...
+[0;32m [*] [0m IP Publico: 35.170.61.85
+.
+...::: INSTANCE IP  -> Region us-west-1 by Profile checkip_hm :::...
+.
+...::: INSTANCE IP  -> Region us-west-2 by Profile checkip_hm :::...
+.
+...::: ELASTIC IP  -> Region sa-east-1 by Profile checkip_hm :::...
+[0;32m [*] [0m IP Publico: 18.229.6.13
+[0;32m [*] [0m IP Publico: 52.67.167.153
+[0;32m [*] [0m IP Publico: 54.94.133.97
+.
+...::: ELASTIC IP  -> Region us-east-1 by Profile checkip_hm :::...
+[0;32m [*] [0m IP Publico: 18.205.179.217
+[0;32m [*] [0m IP Publico: 3.90.129.198
+.
+...::: ELASTIC IP  -> Region us-west-1 by Profile checkip_hm :::...
+.
+...::: ELASTIC IP  -> Region us-west-2 by Profile checkip_hm :::...
+.
+.
+Coleta de informacoes da conta  Greenprod
+Producao
+...::: Network IP -> Region sa-east-1 by Profile checkip_pd :::...
+[0;32m [*] [0m IP Publico: 52.67.193.164
+[0;32m [*] [0m IP Publico: 18.231.118.228
+[0;32m [*] [0m IP Publico: 18.228.189.119
+[0;32m [*] [0m IP Publico: 18.231.41.43
+[0;32m [*] [0m IP Publico: 18.228.58.255
+[0;32m [*] [0m IP Publico: 54.94.192.82
+[0;32m [*] [0m IP Publico: 18.231.60.106
+[0;32m [*] [0m IP Publico: 18.228.245.106
+[0;32m [*] [0m IP Publico: 54.207.23.233
+[0;32m [*] [0m IP Publico: 18.228.244.123
+[0;32m [*] [0m IP Publico: 18.231.40.233
+[0;32m [*] [0m IP Publico: 52.67.97.33
+[0;32m [*] [0m IP Publico: 18.228.99.16
+[0;32m [*] [0m IP Publico: 18.229.25.222
+[0;32m [*] [0m IP Publico: 52.67.170.67
+[0;32m [*] [0m IP Publico: 52.67.1.86
+.
+...::: Network IP -> Region us-east-1 by Profile checkip_pd :::...
+[0;32m [*] [0m IP Publico: 34.239.95.187
+[0;32m [*] [0m IP Publico: 34.235.68.228
+[0;32m [*] [0m IP Publico: 23.23.22.0
+[0;32m [*] [0m IP Publico: 34.204.85.253
+[0;32m [*] [0m IP Publico: 52.5.118.223
+[0;32m [*] [0m IP Publico: 52.20.143.160
+[0;32m [*] [0m IP Publico: 3.90.224.245
+[0;32m [*] [0m IP Publico: 34.192.143.7
+.
+...::: Network IP -> Region us-west-1 by Profile checkip_pd :::...
+.
+...::: Network IP -> Region us-west-2 by Profile checkip_pd :::...
+.
+...::: INSTANCE IP  -> Region sa-east-1 by Profile checkip_pd :::...
+[0;32m [*] [0m IP Publico: 18.228.189.119
+[0;32m [*] [0m IP Publico: 18.228.245.106
+[0;32m [*] [0m IP Publico: 18.228.58.255
+[0;32m [*] [0m IP Publico: 18.231.118.228
+[0;32m [*] [0m IP Publico: 18.231.41.43
+[0;32m [*] [0m IP Publico: 18.231.60.106
+[0;32m [*] [0m IP Publico: 52.67.170.67
+[0;32m [*] [0m IP Publico: 52.67.1.86
+[0;32m [*] [0m IP Publico: 52.67.193.164
+[0;32m [*] [0m IP Publico: 52.67.97.33
+[0;32m [*] [0m IP Publico: 54.94.192.82
+.
+...::: INSTANCE IP  -> Region us-east-1 by Profile checkip_pd :::...
+[0;32m [*] [0m IP Publico: 23.23.22.0
+[0;32m [*] [0m IP Publico: 34.204.85.253
+[0;32m [*] [0m IP Publico: 3.90.224.245
+.
+...::: INSTANCE IP  -> Region us-west-1 by Profile checkip_pd :::...
+.
+...::: INSTANCE IP  -> Region us-west-2 by Profile checkip_pd :::...
+.
+...::: ELASTIC IP  -> Region sa-east-1 by Profile checkip_pd :::...
+[0;32m [*] [0m IP Publico: 18.231.40.233
+.
+...::: ELASTIC IP  -> Region us-east-1 by Profile checkip_pd :::...
+[0;32m [*] [0m IP Publico: 23.23.22.0
+[0;32m [*] [0m IP Publico: 34.239.95.187
+[0;32m [*] [0m IP Publico: 52.20.143.160
+.
+...::: ELASTIC IP  -> Region us-west-1 by Profile checkip_pd :::...
+.
+...::: ELASTIC IP  -> Region us-west-2 by Profile checkip_pd :::...
+.
+.
