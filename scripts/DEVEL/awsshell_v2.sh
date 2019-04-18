@@ -5,12 +5,12 @@ REGIONS="ap-northeast-1 ap-northeast-2 ap-northeast-3 ap-south-1 ap-southeast-1 
 #REGIONS="ap-northeast-1 ap-northeast-2 ap-northeast-3 ap-south-1 ap-southeast-1 ap-southeast-2 ca-central-1 cn-north-1 cn-northwest-1 eu-central-1 eu-north-1 eu-west-1 eu-west-2 eu-west-3 sa-east-1 us-east-2 us-gov-east-1 us-gov-west-1 us-west-1 us-west-2 uss-east-1"
 #REGIONS="sa-east-1 us-east-1 us-west-1 us-west-2"
 
-AWS_ACCOUNTS="greenbrasil greendevelop greenhomolog greenprod"
+AWS_ACCOUNTS="conta_aws_brasil conta_aws_develop conta_aws_homolog conta_aws_prod"
 DATA=$(date +%d/%m/%Y-%H:%M:%S)
 CCOR='\033[0;32m'
 NCOR='\033[0m'
 OK="[*]"
-OK_GREEN=$( echo -e $CCOR $OK $NCOR)
+OK_RED=$( echo -e $CCOR $OK $NCOR)
 VERSION="v1"
 MSG_TITLE="Amazon EC2 Simple Script Inventory IP $VERSION "
 
@@ -21,6 +21,7 @@ for _ACCOUNT in $(echo $AWS_ACCOUNTS)
     [ -f ${_ACCOUNT}_NESSUS_LIST_IP.txt ] && rm -f ${_ACCOUNT}_NESSUS_LIST_IP.txt
 done 
     [ -f ALL_NESSUS_LIST_IP.txt ] && rm -f ALL_NESSUS_LIST_IP.txt
+    [ -f ${0}___.log ] && rm -f ${0}___.log 
 }
 
 func_head()
@@ -55,27 +56,27 @@ func_listip()
       do
         echo "$_IP" >> "ALL_NESSUS_LIST_IP.txt"
         
-        if [ -f greenprod_NESSUS_LIST_IP.txt ] 
+        if [ -f conta_aws_prod_NESSUS_LIST_IP.txt ] 
             then 
-                echo "$_IP" >> "greenprod_NESSUS_LIST_IP.txt"
+                echo "$_IP" >> "conta_aws_prod_NESSUS_LIST_IP.txt"
 
-        elif [ -f greenhomolog_NESSUS_LIST_IP.txt ] 
+        elif [ -f conta_aws_homolog_NESSUS_LIST_IP.txt ] 
             then
-                echo "$_IP" >> "greenhomolog_NESSUS_LIST_IP.txt"
+                echo "$_IP" >> "conta_aws_homolog_NESSUS_LIST_IP.txt"
 
-        elif [ -f greendevelop_NESSUS_LIST_IP.txt ] 
+        elif [ -f conta_aws_develop_NESSUS_LIST_IP.txt ] 
             then
-                echo "$_IP" >> "greendevelop_NESSUS_LIST_IP.txt"
+                echo "$_IP" >> "conta_aws_develop_NESSUS_LIST_IP.txt"
 
-        elif [ -f greenbrasil_NESSUS_LIST_IP.txt ] 
+        elif [ -f conta_aws_brasil_NESSUS_LIST_IP.txt ] 
             then
-                echo "$_IP" >> "greenbrasil_NESSUS_LIST_IP.txt"
+                echo "$_IP" >> "conta_aws_brasil_NESSUS_LIST_IP.txt"
         else
                 echo "Alguma coisa deu errado" 
                 exit 1
         fi
 
-        echo "$OK_GREEN IP Publico: $_IP"
+        echo "$OK_RED IP Publico: $_IP"
     done
 }
 
@@ -118,20 +119,20 @@ func_account()
     _ACCOUNT="$1"
 
     case  $_ACCOUNT in
-        greenbrasil)
-            func_head "GREEN BRASIL - greenbrazil"
+        conta_aws_brasil)
+            func_head "RED BRASIL - conta_aws_brazil"
             _PROFILE="checkip_br" 
-            echo "$_MSGCOUNT Greenbrasil"
-            echo "Green Brasil"
+            echo "$_MSGCOUNT Redbrasil"
+            echo "Red Brasil"
             : > "${_ACCOUNT}_NESSUS_LIST_IP.txt"
             func_geteach_ip "$_PROFILE"
             echo . 
         ;;
 
-        greendevelop)
-            func_head "GREEN DESENVOLVIMENTO - greendevelop"
+        conta_aws_develop)
+            func_head "RED DESENVOLVIMENTO - conta_aws_develop"
             _PROFILE="checkip_dv" 
-            echo "$_MSGCOUNT Greendevelop"
+            echo "$_MSGCOUNT Reddevelop"
             echo "Desenvolvimento"
             : > "${_ACCOUNT}_NESSUS_LIST_IP.txt"
             func_geteach_ip "$_PROFILE"
@@ -139,10 +140,10 @@ func_account()
 
         ;;
 
-        greenhomolog)
-            func_head "GREEN HOMOLOGACAO - greendevelop"
+        conta_aws_homolog)
+            func_head "RED HOMOLOGACAO - conta_aws_develop"
             _PROFILE="checkip_hm" 
-            echo "$_MSGCOUNT Greenhomolog"
+            echo "$_MSGCOUNT Redhomolog"
             echo "Homologacao"
             : > "${_ACCOUNT}_NESSUS_LIST_IP.txt"
             func_geteach_ip "$_PROFILE"
@@ -150,10 +151,10 @@ func_account()
 
         ;;
 
-        greenprod)
-            func_head "GREEN PRODUCAO - greenprod"
+        conta_aws_prod)
+            func_head "RED PRODUCAO - conta_aws_prod"
             _PROFILE="checkip_pd" 
-            echo "$_MSGCOUNT Greenprod"
+            echo "$_MSGCOUNT Redprod"
             echo "Producao"
              : > "${_ACCOUNT}_NESSUS_LIST_IP.txt"
             func_geteach_ip "$_PROFILE"
@@ -169,7 +170,7 @@ func_account()
 
 func_clean
 
-for _ACCOUNT in $(echo $AWS_ACCOUNTS)
+or _ACCOUNT in $(echo $AWS_ACCOUNTS)
   do
     func_account "$_ACCOUNT"
-done 
+done | tee ${0}___.log  
